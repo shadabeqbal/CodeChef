@@ -1,0 +1,27 @@
+//https://www.codechef.com/problems/CATSDOGS
+
+#include<iostream>
+using namespace std;
+
+int main() {
+	int t;
+	long long r_min=0,r_max=0;
+	long long c,d,l;
+	cin>>t;
+	for(int i=0;i<t;i++){
+		cin>>c>>d>>l;
+		if(d*2 >= c){
+			r_min = 4*d;
+			r_max = 4*(c+d);
+		}
+		else{
+			r_min = 4*(d+(c-2*d));
+			r_max = 4*(c+d);
+		}
+		
+		if(l <= r_max && l >= r_min && l%4 == 0)
+			cout<<"yes";
+		else
+			cout<<"no";
+	}
+}
